@@ -2,6 +2,7 @@
 port = 3306  
 socket = /var/lib/mysql/mysql.sock
 default-character-set = utf8 #client字符集
+#default-character-set = latin1 #client字符集
 
 [mysql]
 #这个配置段设置启动MySQL服务的条件；在这种情况下，no-auto-rehash确保这个服务启动得比较快。
@@ -17,6 +18,7 @@ open_files_limit = 10240
 
 default-time-zone = system #服务器时区
 character-set-server = utf8 #server级别字符集
+#character-set-server = latin1 #server级别字符集
 
 #binlog
 log-bin = mysql-bin
@@ -26,7 +28,9 @@ sync_binlog = 1
 binlog_cache_size = 4M
 max_binlog_cache_size = 8M
 max_binlog_size = 1024M
+binlog_format = ROW
 
+#character-set-server = utf8 #server级别字符集
 # replication
 replicate-wild-ignore-table = mysql.% #复制时忽略数据库及表
 replicate-wild-ignore-table = test.% #复制时忽略数据库及表
@@ -127,7 +131,7 @@ myisam_recover
 #自动检查和修复没有适当关闭的 MyISAM 表
 skip-name-resolve  
 lower_case_table_names = 1  
-server-id = 1
+server-id=1
 
 innodb_additional_mem_pool_size = 16M  
 #这个参数用来设置 InnoDB 存储的数据目录信息和其它内部数据结构的内存池大小，类似于Oracle的library cache。这不是一个强制参数，可以被突破。
