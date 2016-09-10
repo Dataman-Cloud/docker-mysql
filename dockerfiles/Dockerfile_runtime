@@ -13,7 +13,6 @@ RUN mkdir /docker-entrypoint-initdb.d
 COPY my.cnf.temp /etc/my.cnf
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY init_mycnf.sh /
-COPY mysql_to_backup.sh /
 
 RUN chmod +x *.sh
 
