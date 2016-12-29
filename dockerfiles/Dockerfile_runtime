@@ -2,7 +2,7 @@ FROM demoregistry.dataman-inc.com/library/centos7-base:latest
 
 MAINTAINER Jinye Liu "jyliu@dataman-inc.com"
 
-ENV PACKAGE_URL https://repo.mysql.com/yum/mysql-5.6-community/el/7/x86_64/mysql-community-server-5.6.26-2.el7.x86_64.rpm
+ENV PACKAGE_URL http://get.dataman-inc.com/repos/centos/7/0/mysql-community-server-minimal-5.6.26-3.el7.x86_64.rpm
 
 # Install server
 RUN yum install -y $PACKAGE_URL \
