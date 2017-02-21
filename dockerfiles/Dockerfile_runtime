@@ -7,7 +7,8 @@ ENV PACKAGE_URL http://repo.mysql.com/yum/mysql-5.6-community/el/7/x86_64/mysql-
 ADD mysql.repo  /etc/yum.repos.d/mysql.repo
 # Install server
 RUN yum install -y $PACKAGE_URL \
-  && yum clean all && rm -rf /var/cache/yum/*
+  && yum clean all
+#&& yum clean all && rm -rf /var/cache/yum/*
 
 RUN mkdir /docker-entrypoint-initdb.d
 
